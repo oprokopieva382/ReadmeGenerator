@@ -21,16 +21,27 @@ function renderLicenseLink(license) {
     Apache: "https://www.apache.org/licenses/LICENSE-2.0",
   };
 
-  if(LicenseLinks) {
-    return LicenseLinks[license]
+  if (LicenseLinks) {
+    return LicenseLinks[license];
   } else {
-    return ""
+    return "";
   }
 }
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(license) {}
+//function that returns the license section of README
+function renderLicenseSection(license) {
+  const licenseText = {
+    MIT: `This project is licensed under the MIT License - see the [MIT License](https://opensource.org/licenses/MIT) for details.`,
+    GNU: `This project is licensed under the GNU General Public License v3.0 - see the [GNU GPL-3.0 License](https://www.gnu.org/licenses/gpl-3.0) for details.`,
+    Apache: `This project is licensed under the Apache License 2.0 - see the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0) for details.`,
+  };
+
+  if (licenseText) {
+    return licenseText[license];
+  } else {
+    return "";
+  }
+}
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {

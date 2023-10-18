@@ -28,6 +28,26 @@ function generateMarkdown(data) {
 
   ## Installation
   ${data.installation}
+
+  ## Usage
+  ${data.usage}
+
+  ## License
+  //! still need to update for badge
+  [!License Badge]()${renderLicenseLink(data.license)}
+
+  ## Contributing
+  ${data.contributing}
+
+  ## Tests
+  ${data.tests}
+
+  ## Questions
+  If you have any questions find me on [GitHub](https://github.com/${
+    data.username
+  }) or feel free email me ${data.email}
+
+
 `;
 }
 

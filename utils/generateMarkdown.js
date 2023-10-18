@@ -6,12 +6,13 @@ function renderLicenseBadge(license) {
     Apache: "Apache%202.0-blue.svg",
   };
 
-  if (LicenseBadgeColor) {
+  if (LicenseBadgeColor[license]) {
     return `https://img.shields.io/badge/License-${LicenseBadgeColor[license]}`;
   } else {
     return "";
   }
 }
+
 
 //function that returns the license link
 function renderLicenseLink(license) {
@@ -48,9 +49,9 @@ function generateMarkdown(data) {
   let badge = renderLicenseBadge(data.license);
   let link = renderLicenseLink(data.license);
   let linkText = renderLicenseSection(data.license)
-
+console.log(badge);
   return `
-  # ${data.title}
+  ## ${data.title}
 
   ## Description
   ${data.description}
@@ -70,8 +71,7 @@ function generateMarkdown(data) {
   ${data.usage}
 
   ## License
-  //! still need to check if work
-  [!License Badge](${badge})(${link})
+[![License Badge](${badge})](${link})
   ${linkText}
 
   ## Contributing

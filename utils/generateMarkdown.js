@@ -1,5 +1,5 @@
 //function that returns a license badge based on which license is passed in
-function renderLicenseBadge(license) {
+const renderLicenseBadge = (license) => {
   const LicenseBadgeColor = {
     MIT: "MIT-yellow.svg",
     GNU: "GPLv3-blue.svg",
@@ -11,11 +11,10 @@ function renderLicenseBadge(license) {
   } else {
     return "";
   }
-}
-
+};
 
 //function that returns the license link
-function renderLicenseLink(license) {
+const renderLicenseLink = (license) => {
   const LicenseLinks = {
     MIT: "https://opensource.org/licenses/MIT",
     GNU: "https://www.gnu.org/licenses/gpl-3.0",
@@ -27,10 +26,10 @@ function renderLicenseLink(license) {
   } else {
     return "";
   }
-}
+};
 
 //function that returns the license section of README
-function renderLicenseSection(license) {
+const renderLicenseSection = (license) => {
   const licenseText = {
     MIT: `This project is licensed under the MIT License`,
     GNU: `This project is licensed under the GNU General Public License`,
@@ -42,14 +41,14 @@ function renderLicenseSection(license) {
   } else {
     return "";
   }
-}
+};
 
 //function to generate markdown for README
-function generateMarkdown(data) {
+const generateMarkdown = (data) => {
   let badge = renderLicenseBadge(data.license);
   let link = renderLicenseLink(data.license);
-  let linkText = renderLicenseSection(data.license)
-console.log(badge);
+  let linkText = renderLicenseSection(data.license);
+  console.log(badge);
   return `
   ## ${data.title}
 
@@ -85,6 +84,6 @@ console.log(badge);
 
 
 `;
-}
+};
 
 module.exports = generateMarkdown;

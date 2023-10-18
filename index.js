@@ -29,7 +29,7 @@ const questions = [
     type: "input",
     name: "license",
     message: "Choose the license for your project",
-    options: ["GNU", "MIT", "Apache"," None"],
+    options: ["GNU", "MIT", "Apache", " None"],
   },
   {
     type: "input",
@@ -54,19 +54,19 @@ const questions = [
 ];
 
 //function to write README file
-function writeToFile(fileName, data) {
+const writeToFile = (fileName, data) => {
   fs.writeFile(fileName, data, (err) => {
     err ? console.error(err) : console.log("README.md successfully generated!");
   });
-}
+};
 
 //function to initialize app
-function init() {
+const init = () => {
   inquirer.prompt(questions).then((value) => {
     const generate = generateMarkdown(value);
     writeToFile("README.md", generate);
   });
-}
+};
 
 // Function call to initialize app
 init();

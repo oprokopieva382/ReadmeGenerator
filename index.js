@@ -62,10 +62,19 @@ const writeToFile = (fileName, data) => {
 
 //function to initialize app
 const init = () => {
-  inquirer.prompt(questions).then((value) => {
-    const generate = generateMarkdown(value);
-    writeToFile("README.md", generate);
-  });
+  inquirer
+    .prompt(questions)
+    .then((value) => {
+      const generate = generateMarkdown(value);
+      writeToFile("README.md", generate);
+    })
+    .catch((error) => {
+      if (error.isTtyError) {
+        console.error("Couldn't be rendered in the current environment.");
+      } else {
+        console.error(error);
+      }
+    });
 };
 
 // Function call to initialize app

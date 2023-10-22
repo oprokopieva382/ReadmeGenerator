@@ -26,7 +26,7 @@ const questions = [
     message: "Provide installation instructions:",
   },
   {
-    type: "input",
+    type: "list",
     name: "license",
     message: "What is the license for your project?",
     choices: ["GNU", "MIT", "Apache", " None"],

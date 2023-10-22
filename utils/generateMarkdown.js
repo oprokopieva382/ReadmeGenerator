@@ -71,6 +71,7 @@ const generateMarkdown = ({
   - [Contributing](#contributing)
   - [Tests](#tests)
   - [Questions](#questions)
+  - [Links](#links)
 
   ## Installation
   ${installation}
@@ -91,6 +92,8 @@ const generateMarkdown = ({
   ## Questions
   If you have any questions find me on [GitHub](https://github.com/${username}) or feel free email me ${email}
 
+ ## Links
+Check out the walkthrough video[click here](https://drive.google.com/file/d/1PF8LOfk7dHiO2QEZ2htGj7a-FRFeAnWk/view)
 
 `;
 };
